@@ -14,6 +14,6 @@ def create(request):
     title = request.POST['title']
     content = request.POST['content']
 
-    return HttpResponse(title + "-" + content)
+    return HttpResponse(title + "->" + content)
 
     # return render(request, 'post/create.html')
