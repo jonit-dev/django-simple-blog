@@ -1,0 +1,5 @@
+.card-image {
+    height: 10rem;
+    object-position: center;
+    object-fit: cover;
+}

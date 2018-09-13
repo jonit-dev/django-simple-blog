@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="jumbotron">
+
+                    <h1>Welcome to my Blog</h1>
+                    <p>Feel free to post about anything you want. Nobody will read, anyway.</p>
+
+                    <a href="{% url 'post' %}" class="btn btn-primary">Post a Crap</a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <h1 class="mb-4">Latest Posts</h1>
+
+
+                    {% for post in posts.all %}
+
+                        <div class="card mb-4" style="width: 18rem;">
+{#                        IMAGE IS LOADED DIRRENTLY. NOTE HOW IT USES A image.url#}
+                            <img class="card-img-top card-image" src="{{ post.image.url }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">{{ post.pub_date_pretty }}</h6>
+                                <p class="card-text">{{ post.summary }}</p>
+                                <a href="#" class="btn btn-primary">View Post</a>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock content %}
